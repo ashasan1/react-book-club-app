@@ -6,12 +6,12 @@ class StudentCard extends Component {
     constructor(props) {
         super(props);
 
-        this.state = { currentUser: null, data:null, superCoolData: [] };
+        this.state = { currentUser: null, bookData:null, superCoolData: [] };
 
     };
  
     componentDidMount = () => {
-        
+
         this.setState({ superCoolData: [
             {
                 id: 1,
@@ -50,8 +50,23 @@ return (
                     </>
                 )
             })}
-            
         </div>
+        <input id="newUser"type="text"></input>
+        <button onClick={ () => {
+            let username = document.querySelector('#newUser').value;
+
+            let userObject = {
+                name : username,
+                age: "25",
+                school: "Homeschooled"
+            }
+
+            this.setState({ superCoolData: this.state.superCoolData.push(userObject)});
+
+            console.log(this.state.superCoolData);
+
+
+        }}>Create New User</button>
         </>
     )
 }

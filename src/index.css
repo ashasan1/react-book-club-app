@@ -1,0 +1,6 @@
+.backdrop {
+    background-image: url('../public/background-books.jpeg');
+    background-size: cover;
+    background-position: 100px;
+    min-height: 200px;
+}
